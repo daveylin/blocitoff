@@ -6,4 +6,16 @@
   <h4>User Email: <font color=blue><%= @user.email %></font></h4>
   <h4>User Last Sign In: <font color=blue><%= @user.last_sign_in_at %></font></h4>
   <h4>User Last Sign In IP: <font color=blue><%= @user.last_sign_in_ip %></font></h4>
+  <br>
+  <h2>Add ToDo Items</h2>
+  <div class="row">
+  <br>
+    <%= render partial: 'items/form', locals: { user: @user, item: @item } %>
+  </div>
+  <br>
+  <h2>User ToDo Items</h2>
+  <br>
+  <%= @items.each do |item| %>
+    <p><b><%= item.name %></b> created <%= item.created_at %> ago</p>
+  <% end %>
 </div>
