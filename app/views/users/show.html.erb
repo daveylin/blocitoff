@@ -15,7 +15,5 @@
   <br>
   <h2>User ToDo Items</h2>
   <br>
-  <% @items.each do |item| %>
-    <p><b><%= item.name %></b> created <%= item.created_at %> ago</p>
-  <% end %>
+  <%= render partial: 'items/item', locals: {items: @items} %>
 </div>
